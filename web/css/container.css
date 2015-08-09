@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31 ก.ค. 2558, 15:36:56
+    Author     : kamchaipoonpanitupatum
+*/
+body{
+    //box-shadow: 5px 5px 30px rgba(0,0,0,0.7);
+}
+#all{
+     background: #cfcfcf;
+     width: 65em;
+     margin: auto;
+     
+}
+
+#box_login{
+    background: #ffffff;
+    width: 65em;
+    height: 4em;
+    
+    background-color: orange;
+    //padding: 50px;
+}
+.item_login{
+    float: right;
+}
+
+
+#iframe_inbox{
+    width: 57em;
+    height: 100em;
+    float: right;
+    border: none;
+    //background-color: whitesmoke;
+    
+}
+
+#box_linklist{
+    float: left;
+    //background-color: mintcream;
+}
+#form_background{
+    width: 57em;
+    background-color: red;
+}
+
+#form_input{
+     float: right;
+}
+
+#form_text{
+     float: left;
+}
