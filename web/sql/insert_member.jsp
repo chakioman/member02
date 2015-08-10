@@ -81,7 +81,8 @@
                 String sql_Header = request.getParameter("frm_Header");
                 
                 String sql_Pointer = "11111";
-       
+                
+                String sql_Sex = request.getParameter("frm_Sex");
                 
                 
                 
@@ -108,8 +109,9 @@
                 
          //s.execute(sql2);
         
-         out.print(sql2);
-        
+        // out.print(sql2);
+         //out.print(sql_SexMale);
+        out.print(sql_Sex);
 	  		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
