@@ -19,11 +19,12 @@
         <script>
             //var for validate input
             var validate_Header = false;
-            var validate_CardID = true;
-            var validate_frm_Sex = true;
+            var validate_CardID = false;
+            var validate_frm_Sex = false;
             var validate_frm_ProfileStudyOrWork = false;
             var validate_RuleOfOrganization = false;
             var validate_Username = false;
+            var validate_bile = false;
             function fncSubmit(){//run for validate input before sent to sql/insert_member.jsp
                 
                 if(!validate_Header){
@@ -89,8 +90,14 @@
                 }else if(!validate_RuleOfOrganization){
                     $('#input_RuleOfOrganization').focus();
                     return false;
-                }else if($('#txtUsername').val()==""){
-                    $('#txtUsername').focus();
+                }else if(!validate_Username){
+                    $('#input_username').focus();
+                    return false;
+                }else if($('#input_pass').val()==""){
+                    $('#input_pass').focus();
+                    return false;
+                }else if(!validate_bile){
+                    $('#input_bile10').focus();
                     return false;
                 }
                 
@@ -130,7 +137,40 @@
                 
                 change_input_ProfileStudyOrWork();
                 change_input_RuleOfOrganization();
+                change_ipout_username();
+                change_bile();
             });
+            //Sex
+            function change_bile(){
+                $(':input[name="frm_bile"]').change(function(){               
+                    var x = document.getElementById("input_bile10").checked;
+                    var y = document.getElementById("input_bile20").checked;
+                    var z = document.getElementById("input_bile50").checked;
+                    if(x|y|z){
+                        validate_bile = true;
+                    }
+                });
+
+            }
+            
+            //check headerID and return name header
+            function change_ipout_username(){
+                $('#input_username').change(function(){
+                    check_username();   
+                });
+            }
+            function check_username(){
+               var setusername = $('#input_username').val();
+               $.ajax({
+                   url:'<%=request.getContextPath()%>/check_username',
+                   data : {username:setusername},
+                   dataType : 'json',
+                   success: function(data){
+                        $('div#showresult_username').html(data.text);                      
+                        validate_Username = data.validate;
+                   }                 
+               });
+            }
             
             
             //check headerID and return name header
@@ -161,7 +201,7 @@
             function check_cardID(){
                var cardID_set = $('#input_cardID').val();
                 $.ajax({
-                   url:'../sql/check_cardID.jsp',
+                   url:'<%=request.getContextPath()%>/check_cardID',
                    data : {cardID_get:cardID_set},
                    dataType : 'json',
                    success: function(data){
@@ -345,11 +385,13 @@
                     </tr>  
                     <tr>
                         <td>Username</td>                                           
-                        <td><input name="frm_Username" type="text" id="txtUsername"></td>
+                        <td><input name="frm_Username" type="text" id="input_username"></td>
+                         <td><div id="showresult_username"></div></td>
                     </tr>        
                     <tr>         
                         <td>Password</td>                                           
-                        <td><input name="frm_Password" type="password" id="txtPassword"></td>
+                        <td><input name="frm_Password" type="password" id="input_pass"></td>
+                         <td><div id="showresult_pass"></div></td>
                     </tr>                                     
                     <tr>
                         <td>อัพโหลดรูปภาพโปรไฟล์</td>                                           
@@ -362,9 +404,9 @@
                     <tr>
                         <td>จำนวนการเปิดบิลครั้งแรก</td>                        
                         <td>
-                            <input type="radio" id="" name="frm_bile">10
-                            <input type="radio" id="" name="frm_bile">20
-                            <input type="radio" id="" name="frm_bile">50
+                            <input type="radio" id="input_bile10" name="frm_bile">10
+                            <input type="radio" id="input_bile20" name="frm_bile">20
+                            <input type="radio" id="input_bile50" name="frm_bile">50
                         </td>
                     </tr>                      
                     <tr>
