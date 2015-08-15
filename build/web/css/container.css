@@ -9,46 +9,76 @@ and open the template in the editor.
 */
 body{
     //box-shadow: 5px 5px 30px rgba(0,0,0,0.7);
+    //background-color: orange;
+    //background: black;
 }
 #all{
-     background: #cfcfcf;
-     width: 65em;
+    // 
+     background: black;
+     padding: 10px;
+     width: 67em;
      margin: auto;
-     
+      //background-color: red;
+      box-shadow: 5px 5px 20px burlywood;
+      border: solid rosybrown 1px;
+      //border-radius: 10px;
 }
 
 #box_login{
     background: #ffffff;
     width: 65em;
     height: 4em;
-    
-    background-color: orange;
-    //padding: 50px;
+    padding: 10px;
+    //background-color: orange;
+    background: url(BG_TOP.jpg) repeat;
+    border-radius: 10px;
+    border: solid orange 1px;
+    //margin: auto;
+    padding: 1em;
+    //box-shadow: 5px 5px 5px burlywood;
+      border: solid burlywood 1px;
 }
 .item_login{
     float: right;
+    
+}#box_body{
+    border: solid orange 1px;
+    margin: 10px 0 0 0 ;
+    border-radius: 10px;
+    background-color: white;
 }
 
 
 #iframe_inbox{
-    width: 57em;
-    height: 100em;
-    float: right;
+    
+    width: 55em;
+    height: 80em;
+    //float: right;
     border: none;
     //background-color: whitesmoke;
+    
+    border-radius: 0px 10px 10px 0px;
+    //border: solid orange 1px;
+    // background-color: red;
     
 }
 
 #box_linklist{
+    
+    //padding: 10px;
+     width: 11em;
+    //background-color: orange;
     float: left;
     //background-color: mintcream;
 }
 #form_background{
     width: 57em;
     background-color: red;
+    
 }
 
 #form_input{
+    
      float: right;
 }
 

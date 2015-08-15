@@ -32,13 +32,15 @@
                 <a href="delete.jsp">logout</a>
             </div> 
             </div>
+                
+            <div id="box_body">    
             <div id="box_linklist">  
                 <a href="box/home_admin.jsp" target="frame_box">home</a><br>
                 <a href="box/register_admin.jsp" target="frame_box">register</a>
             </div>
             
             <iframe id="iframe_inbox" src="box/home_admin.jsp" name="frame_box" ></iframe>
-            
+            </div>
         </div>
         
     </body>
